@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="toolbar">
+            <button data-tool="draw">D</button>
+            <button data-tool="erase">E</button>
+            <button data-tool="stamp">S</button>
+            <button id="undo-btn">↺</button>
+            <button id="clear-btn">C</button>
+        </aside>
+        <main class="workframe">
+            <div class="controls">
+                <div class="control">
+                    <label for="size-input">Size</label>
+                    <span>min</span>
+                    <input type="range" id="size-input" min="1" max="50" value="5">
+                    <span>max</span>
+                </div>
+                <div class="control">
+                    <label for="color-input">Color</label>
+                    <input type="color" id="color-input" value="#000000">
+                </div>
+            </div>
+            <canvas id="canvas" width="800" height="600"></canvas>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
