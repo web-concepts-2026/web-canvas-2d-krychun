@@ -38,6 +38,10 @@ body{
     background-color: #e5e7eb;
 }
 
+.toolbar button:active {
+    transform: scale(0.92);
+}
+
 .toolbar button.active{
     background-color: #ffb5fd;
     color: #000000;
