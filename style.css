@@ -38,6 +38,11 @@ body{
     background-color: #e5e7eb;
 }
 
+.toolbar button.active{
+    background-color: #ffb5fd;
+    color: #000000;
+}
+
 .workframe{
     display: flex;
     flex-direction: column;
