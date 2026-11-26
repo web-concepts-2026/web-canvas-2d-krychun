@@ -1,9 +1,13 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const sizeInput = document.getElementById('size-input');
+const colorInput = document.getElementById('color-input');
 
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
+let brushSize = Number(sizeInput.value);
+let brushColor = colorInput.value;
 
 function startDrawing(event){
     isDrawing = true;
@@ -14,6 +18,9 @@ function startDrawing(event){
 function draw(event){
     if (!isDrawing) return;
 
+    ctx.lineWidth = brushSize;
+    ctx.strokeStyle = brushColor;
+    ctx.lineCap = 'round';
     ctx.beginPath();
     ctx.moveTo(lastX, lastY);
     ctx.lineTo(event.offsetX, event.offsetY);
@@ -31,3 +38,11 @@ canvas.addEventListener('pointerdown', startDrawing);
 canvas.addEventListener('pointermove', draw);
 canvas.addEventListener('pointerup', stopDrawing);
 canvas.addEventListener('pointerleave', stopDrawing);
+
+sizeInput.addEventListener('input', () => {
+    brushSize = Number(sizeInput.value);
+});
+
+colorInput.addEventListener('input', () => {
+    brushColor = colorInput.value;
+});
